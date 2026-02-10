@@ -1,0 +1,136 @@
+/* --- CSS STYLES --- */
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+        :root {
+            --primary-color: #d32f2f;
+            --bg-color: #fff0f3;
+            --text-color: #4a4a4a;
+            --paper-color: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            font-family: 'Lora', serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle, rgba(255,240,243,1) 0%, rgba(255,200,210,1) 100%);
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            color: var(--primary-color);
+            margin: 0;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        p.subtitle {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            font-style: italic;
+            z-index: 2;
+        }
+
+        /* Photo Collage Section */
+        .gallery-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        /* Masonry Grid Layout */
+        .gallery {
+            columns: 3 250px;
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: block; /* Removes bottom whitespace */
+        }
+
+        .gallery img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        /* "What You Mean To Me" Section */
+        .letter-section {
+            background-color: var(--paper-color);
+            max-width: 700px;
+            margin: 4rem auto 6rem auto;
+            padding: 4rem;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            line-height: 1.8;
+            font-size: 1.2rem;
+        }
+
+        /* Paper texture effect */
+        .letter-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 5px;
+            background: var(--primary-color);
+            border-radius: 4px 4px 0 0;
+        }
+
+        .letter-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .signature {
+            text-align: right;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-top: 2rem;
+        }
+
+        /* Floating Hearts Animation */
+        .heart {
+            position: fixed;
+            top: -1vh;
+            color: var(--primary-color);
+            opacity: 0.5;
+            z-index: 1;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(105vh); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 3.5rem; }
+            .letter-section { padding: 2rem; width: 85%; }
+            .gallery { columns: 2 150px; }
+        }
